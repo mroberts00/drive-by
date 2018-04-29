@@ -27,6 +27,8 @@
 }
 
 .new-shooting-link {
+    max-width: 200px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
