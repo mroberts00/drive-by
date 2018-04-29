@@ -41,8 +41,8 @@
     {
       "colours" => [ "red","purple","black","cream","canary yellow","pink polka-dot","lilac", "rainbow"], 
       "nicknames" => ["Sticky Micky", "The Paddle Pop Killer", "Micky Blue", "The Trigger Happy Pappy", "The Funeral Maker", "Sik Mik"],
-      "maladies" => ["Gonorrhoea", "Mad Cow Disease", "Anti-Social Mood Disorder", "Sexsomnia", "the common cold", "Athlete's foot", "Swine Flu"],
-      "techniques" => ["Hypnosis", "long-term Subliminal Propaganda", "not washing his hands after pooping", "poison dart", "gas bomb", "spiking the water supply", "Big Pharma", "GMOs"]
+      "maladies" => ["Gonorrhoea", "Mad Cow Disease", "Anti-Social Mood Disorder", "Sexsomnia", "the common cold", "Swine Flu"],
+      "techniques" => ["Hypnosis", "long-term Subliminal Propaganda", "not washing his hands after pooping", "poison dart", "gas bomb", "spiking the local water supply", "Big Pharma", "GMOs"]
     }
   )
   %>
@@ -74,9 +74,12 @@
 
     <% madlib4 = Madlibs::Madlib.new(
       "Any members of the public with (information|leeds|details) on the (fugitive|criminal|shooter) Michael or his 
-      #{@shooting.vehicle} should contact Crime Stoppers on #{Faker::PhoneNumber.phone_number}. A reward of 43 (Lingots|Pesos|Lira|Francs|Balboas|Ringglets|Tokens) will be paid to anyone who provides (humerous|plausible|any) information. One thing is for sure, 
+      #{@shooting.vehicle} should contact Crime Stoppers on 1800-STOP-MIK. A reward of 43 <currency> will be paid to anyone who provides (humerous|plausible|any) information. One thing is for sure, 
       we are no longer safe in #{@shooting.location}. This (writer|citizen) needs a #{Faker::Beer.style}. 
       (Adios|Hooroo|Arrivederci|Godspeed|Cheerio) (muchachos|amigos).",
+      {
+        "currencies" => ["Timezone tokens", "Beanie Babies", "Imperial Credits", "Silver Sickles", "Poke-Dollars"]
+        }
   )
   %>
 

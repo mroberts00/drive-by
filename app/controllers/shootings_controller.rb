@@ -35,7 +35,7 @@ class ShootingsController < ApplicationController
     respond_to do |format|
       if @shooting.save
         rand(3..5).times do
-          @shooting.victims.create(name: Faker::Name.name, age: rand(2..107), dead: Faker::Boolean.boolean(0.7))
+          @shooting.victims.create(name: Faker::Name.name, age: rand(2..107), dead: Faker::Boolean.boolean(0.65))
         end
         format.html { redirect_to @shooting, notice: 'Shooting was successfully created.' }
         format.json { render :show, status: :created, location: @shooting }
