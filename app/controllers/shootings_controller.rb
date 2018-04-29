@@ -27,8 +27,8 @@ class ShootingsController < ApplicationController
   # POST /shootings
   # POST /shootings.json
   def create
-    gun = Madlibs::Madlib.new('<gun>', { "guns" => ["rocket launcher", "Uzi", "sawed-off shotgun", "Blunderbuss", "M45 Tactical Shotgun", "M82 Assault Rifle", "Particle Cannon", "Pulse rifle", "Phaser", "Railgun", "Sub-Atomic Neutrodestabilizer", "Tesla Gun", "Widowmaker", "CZ53 personal minigun", "Glock 7", "Golden Gun", "Moonraker Lazer", "silenced PP7", "grenade launcher"]})
-    car = Madlibs::Madlib.new('<car>', { "cars" => ["Tesla Model 3", "Morris Minor", "Aston Martin DB9", "Ford Pickup", "Ducati V4 Panigale", "VW Beetle", "Mini Cooper", "VW Combi", "Mitsubishi Delica", "American Schoolbus", "Lamborghini Diablo", "John Deer 5100MH Tractor", "Gibbs Humdinga Amphibious Vehicle", "Dodgem Car", "Sherman Crocodile Flamethrower Tank", "Mazda Titan Dump", "Honda Life Dunk", "Dodge Rampage", "Renault LeCar", "Red Bull F1 car"]})
+    gun = Madlibs::Madlib.new('<gun>', { "guns" => ["Rocket Launcher", "Uzi", "Sawed-off Shotgun", "Blunderbuss", "M45 Tactical Shotgun", "M82 Assault Rifle", "Particle Cannon", "Pulse Rifle", "Phaser", "Railgun", "Sub-Atomic Neutrodestabilizer", "Tesla Gun", "Widowmaker", "CZ53 Personal Minigun", "Glock 7", "Golden Gun", "Moonraker Lazer", "Silenced PP7", "Grenade Launcher"]})
+    car = Madlibs::Madlib.new('<car>', { "cars" => ["Tesla Model 3", "Morris Minor", "Aston Martin DB9", "Ford Pickup", "Ducati V4 Panigale Superbike", "VW Beetle", "Mini Cooper", "VW Combi", "Mitsubishi Delica", "American Schoolbus", "Lamborghini Diablo", "John Deer 5100MH Tractor", "Gibbs Humdinga Amphibious Vehicle", "Dodgem Car", "Sherman Crocodile Flamethrower Tank", "Mazda Titan Dump", "Honda Life Dunk", "Dodge Rampage", "Renault LeCar", "Red Bull F1 car"]})
     @shooting = Shooting.new(weapon: gun.generate, location: Faker::Address.community, vehicle: car.generate )
 
 
