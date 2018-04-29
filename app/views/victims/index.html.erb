@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<body class="victims-table">
+<h1>Victims</h1>
+
+    <% dead_victims = 0 %>
+    <% injured_victims = 0 %>    
+    <% @victims.each do |victim| %>
+    <% if victim.dead == true %>
+    <% dead_victims += 1 %>
+    <% else %>
+    <% injured_victims += 1 %>
+    <% end %>
+    <%end%>    
+
+    <div class="totals">
+      <h3>Total Dead: <%= dead_victims %></h3>
+      <h3>Total Injured: <%= injured_victims %></h3>
+    </div>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th colspan="1"></th>      
+      <th>Date</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @victims.each do |victim| %>
+      <tr>
+        <td><%= victim.name %></td>
+        <td><%= victim.age %></td>
+        <td><%= if victim.dead == true then "Deceased" else "Injured" end %></td>
+        <td><%= victim.created_at.strftime("%d %B %Y") %></td>
+        <td><%= victim.shooting.location %></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+<div class="new-shooting-link">
+<%= link_to 'See Shootings', shootings_path %>
+</div>
+
+</body>

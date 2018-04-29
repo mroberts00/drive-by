@@ -1,0 +1,105 @@
+
+
+
+  <% dead_victims = 0 %>
+  <% injured_victims = 0 %> 
+  <% dead_names = [] %> 
+  <% injured_names = [] %> 
+  <% dead_ages = [] %>
+  <% injured_ages = [] %>  
+  <% @victims.each do |victim| %>
+  <% if victim.dead == true %>
+  <% dead_victims += 1 %>
+  <% dead_names << victim.name %>
+  <% dead_ages << victim.age %>
+  <% else %>
+  <% injured_victims += 1 %>
+  <% injured_names << victim.name %>  
+  <% injured_ages << victim.age %>  
+  <% end %>
+  <% end %>
+ 
+<body class="show-body">
+<h1 id="paper-heading"><%= "The #{@shooting.location} Inquirer" %></h1>
+<p>
+  <strong>Date:</strong>
+  <%= @shooting.created_at.strftime("%A, %d %B %Y") %> at <%= @shooting.created_at.localtime.strftime("%I.%M %p") %>
+</p>
+
+<p>
+  <strong>Written By:</strong>
+  <%= Faker::Name.name %>
+</p>
+
+ <% madlib1 = Madlibs::Madlib.new(
+    "(Disaster|Catastrophe|Tragedy) hit (downtown|eastern) #{@shooting.location} today as the (notorious|infamous|wanted) 
+    criminal Michael, commonly known as '<nickname>', struck again. Driving a <colours> #{@shooting.vehicle} he 
+    (tore|turned|sped|crawled) down #{Faker::StarWars.planet} (Street|Drive|Crescent|Lane) at 
+    #{@shooting.created_at.localtime.strftime("%H:%M")} and opened fire with his #{@shooting.weapon}, killing 
+    #{dead_victims} and injuring #{injured_victims}.",
+    {
+      "colours" => [ "red","purple","black","cream","canary yellow","pink polka-dot","lilac", "rainbow"], 
+      "nicknames" => ["Sticky Micky", "The Paddle Pop Killer", "Micky Blue", "The Trigger Happy Pappy", "The Funeral Maker", "Sik Mik"],
+      "maladies" => ["Gonorrhoea", "Mad Cow Disease", "Anti-Social Mood Disorder", "Sexsomnia", "the common cold", "Athlete's foot", "Swine Flu"],
+      "techniques" => ["Hypnosis", "long-term Subliminal Propaganda", "not washing his hands after pooping", "poison dart", "gas bomb", "spiking the water supply", "Big Pharma", "GMOs"]
+    }
+  )
+  %>
+  <% madlib2 = Madlibs::Madlib.new(
+        "#{dead_names.to_sentence} aged #{dead_ages.to_sentence} died at the scene from hits to the 
+        (gooch|elbow|neck|earlobe|appendix|gut) and (knee|spleen|palm|temple|bladder) while #{injured_names.to_sentence} 
+        were taken to #{Faker::Pokemon.name} Hospital where they were treated for a range of injuries, however doctors have 
+        said that it was the diagnosis of <malady> that worried them the most. We can only make 
+        (uninformed|wild|inaccurate|ridiculous) guesses as to how Michael '<nickname>' managed this, but since that is 
+        our specialty here at The #{@shooting.location} Inquirer,  I can say with (certainty|confidence) that it was done 
+        by <technique>.",
+    {
+            "nicknames" => ["Sticky Micky", "The Paddle Pop Killer", "Micky Blue", "The Trigger Happy Pappy", "The Funeral Maker", "Sik Mik"],
+      "maladies" => ["Gonorrhoea", "Mad Cow Disease", "Anti-Social Mood Disorder", "Sexsomnia", "the common cold", "Athlete's foot", "Swine Flu"],
+      "techniques" => ["Hypnosis", "long-term Subliminal Propaganda", "not washing his hands after pooping", "poison dart", "gas bomb", "spiking the water supply", "Big Pharma", "GMOs"]
+    }
+  )
+  %>
+
+    <% madlib3 = Madlibs::Madlib.new(
+      "Local residents #{Faker::Name.name} and #{Faker::Name.name} were out walking their #{Faker::Dog.breed}, 
+        #{Faker::Dog.name}, and told The Inquirer 'Well that was pretty (awesome|amazing|lit) wasn't it? Did you see them 
+        (bodies|suckers|meatbags) hit the floor? There was (blood|guts|bile) everywhere! Are you gonna put my picture on the 
+        (telly|internets|radio|) mister?'. 
+    While #{Faker::Name.name} from #{Faker::Address.community} said 'I don't feel safe in this town no more. 
+    #{Faker::ChuckNorris.fact} Did you know that? I bet he could take care of this problem.'",
+  )
+  %>
+
+    <% madlib4 = Madlibs::Madlib.new(
+      "Any members of the public with (information|leeds|details) on the (fugitive|criminal|shooter) Michael or his 
+      #{@shooting.vehicle} should contact Crime Stoppers on #{Faker::PhoneNumber.phone_number}. One thing is for sure, 
+      we are no longer safe in #{@shooting.location}. This (writer|chump|citizen) needs a #{Faker::Beer.style}. 
+      (Adios|Hooroo|Arrivederci|Godspeed|Cheerio) (muchachos|peeps|amigos).",
+  )
+  %>
+
+  <p class="article">
+    <%=madlib1.generate %>
+    </br>
+    </br>    
+    <%= madlib2.generate %>
+    </br>
+    </br>    
+    <%=madlib3.generate %>
+    </br>
+    </br>    
+    <%= madlib4.generate %>
+  </p>
+
+  <p class="link-list">
+    To view more of our gruesome catalogue of Michael's previous drive-by shootings please click <%= link_to ' here', shootings_path %>
+  </p>
+
+  <p class="link-list">
+    For a full list of Michael's victims, please click <%= link_to 'here', victims_path %>
+  </p>
+</body>
+
+
+

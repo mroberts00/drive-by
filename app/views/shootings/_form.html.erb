@@ -1,0 +1,29 @@
+<%= form_with(model: shooting, local: true) do |form| %>
+  <% if shooting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shooting.errors.count, "error") %> prohibited this shooting from being saved:</h2>
+
+      <ul>
+      <% shooting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+  </div>
+
+  <div class="field">
+
+  </div>
+
+  <div class="field">
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Take cover! He's got a gun!", :class => "shooting-button" %>
+  </div>
+<% end %>
