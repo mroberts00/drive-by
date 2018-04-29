@@ -20,7 +20,8 @@
   <% end %>
  
 <body class="show-body">
-<h1 id="paper-heading"><%= "The #{@shooting.location} Inquirer" %></h1>
+<h1 id="paper-heading1"><%= "The #{@shooting.location}" %></h1>
+<h1 id="paper-heading2">Inquirer</h1>
 <p>
   <strong>Date:</strong>
   <%= @shooting.created_at.strftime("%A, %d %B %Y") %> at <%= @shooting.created_at.localtime.strftime("%I.%M %p") %>

@@ -81,16 +81,24 @@
     justify-content: center;
 }
 
-#paper-heading {
+#paper-heading1 {
     width: 100%;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 60px;
     font-size: 80px;
     font-family: 'Cormorant Unicase', serif;
     display: flex;
-    text-overflow: ellipsis;
+    justify-content: center;
+
+}
+#paper-heading2 {
+    width: 100%;
+    margin-bottom: 60px;    
+    font-size: 80px;
+    font-family: 'Cormorant Unicase', serif;
+    display: flex;
     justify-content: center;
 }
+
 
 .article {
     font-size: 20px;
