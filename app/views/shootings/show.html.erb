@@ -39,16 +39,14 @@
     #{@shooting.created_at.localtime.strftime("%H:%M")} and opened fire with his #{@shooting.weapon}, killing 
     #{dead_victims} and injuring #{injured_victims}.",
     {
-      "colours" => [ "red","purple","black","cream","canary yellow","pink polka-dot","lilac", "rainbow"], 
-      "nicknames" => ["Sticky Micky", "The Paddle Pop Killer", "Micky Blue", "The Trigger Happy Pappy", "The Funeral Maker", "Sik Mik", "Ted Bundy and Cola"],
-      "maladies" => ["Gonorrhoea", "Mad Cow Disease", "Anti-Social Mood Disorder", "Sexsomnia", "the common cold", "Swine Flu"],
-      "techniques" => ["Hypnosis", "long-term Subliminal Propaganda", "not washing his hands after pooping", "poison dart", "gas bomb", "spiking the local water supply", "Big Pharma", "GMOs"]
+      "colours" => [ "lipstick red","deep purple","jet black","cream","canary yellow","pink polka-dot","lilac", "rainbow"], 
+      "nicknames" => ["Sticky Micky", "The Paddle Pop Killer", "Micky Blue", "The Trigger Happy Pappy", "The Funeral Maker", "Sik Mik", "Ted Bundy and Cola"]
     }
   )
   %>
   <% madlib2 = Madlibs::Madlib.new(
-        "#{dead_names.to_sentence} aged #{dead_ages.to_sentence} died at the scene from hits to the 
-        (gooch|elbow|neck|earlobe|appendix|gut), (knee|spleen|palm|temple|bladder) and (cheek|testicle|bottom|voicebox) while the injured and some nosy onlookers 
+        "(Unfortunately|Regrettably|Sadly) #{dead_names.to_sentence} aged #{dead_ages.to_sentence} died at the scene from hits to the 
+        (gooch|elbow|earlobe|appendix|gut), (spleen|palm|temple|bladder) and (cheek|testicle|buttocks|voicebox) while the injured and some nosy onlookers 
         were taken to #{Faker::LordOfTheRings.character} Hospital where they were treated for a range of injuries. Doctors, however, have 
         said that it was the diagnosis of <malady> that worried them the most. We can only make 
         (uninformed|wild|inaccurate|ridiculous) guesses as to how Michael '<nickname>' managed this, but since that is 
@@ -56,17 +54,17 @@
         by <technique>.",
     {
             "nicknames" => ["Sticky Micky", "The Paddle Pop Killer", "Micky Blue", "The Trigger Happy Pappy", "The Funeral Maker", "Sik Mik", "Ted Bundy and Cola"],
-      "maladies" => ["Gonorrhoea", "Mad Cow Disease", "Anti-Social Mood Disorder", "Sexsomnia", "the common cold", "Athlete's foot", "Swine Flu"],
-      "techniques" => ["Hypnosis", "long-term Subliminal Propaganda", "not washing his hands after pooping", "poison dart", "gas bomb", "spiking the water supply", "Big Pharma", "GMOs"]
+      "maladies" => ["Gonorrhoea", "Mad Cow Disease", "Sexsomnia", "Swine Flu", "Cooties", "Ebola", "Spattergroit"],
+      "techniques" => ["hypnosis", "long-term Subliminal Propaganda", "not washing his hands after pooping", "poison dart", "gas bomb", "spiking local the water supply", "Big Pharma", "GMOs"]
     }
   )
   %>
 
     <% madlib3 = Madlibs::Madlib.new(
       "Local residents #{Faker::Name.name} and #{Faker::Name.name} were out walking their #{Faker::Dog.breed}, 
-        #{Faker::Dog.name}, and told The Inquirer 'Well that was pretty (awesome|amazing|lit) wasn't it? Did you see them 
-        (bodies|suckers|meatbags) hit the floor? There was (blood|guts|bile|vomit) everywhere! Are you gonna put my picture on the 
-        (telly|internets|radio|) mister?'. 
+        #{Faker::Dog.name}, and told The Inquirer 'Well that was pretty (sweet|heckerz|lit) wasn't it? Did you see them 
+        (bodies|suckers|meatbags) hit the floor? There was (blood|guts|bile|vomit|shit) everywhere! (ROFL|LMFAO)! Are you gonna put our picture on the 
+        (telly|internets|radio) mister?' 
     While #{Faker::Name.name} from #{Faker::Address.community} said 'I don't feel safe in this town no more. 
     #{Faker::ChuckNorris.fact} Did you know that? I bet he could take care of this problem.'",
   )
@@ -76,9 +74,9 @@
       "Any members of the public with (information|leeds|details) on the (fugitive|criminal|shooter) Michael or his 
       #{@shooting.vehicle} should contact Crime Stoppers on 1800-STOP-MIK. A reward of 43 <currency> will be paid to anyone who provides (humerous|plausible|any) information. One thing is for sure, 
       we are no longer safe in #{@shooting.location}. This (writer|citizen) needs a #{Faker::Beer.style}. 
-      (Adios|Hooroo|Arrivederci|Godspeed|Cheerio) (muchachos|amigos).",
+      (Adios|Hooroo|Arrivederci|Godspeed|Cheerio) (muchachos|amigos|fam).",
       {
-        "currencies" => ["Timezone tokens", "Beanie Babies", "Imperial Credits", "Silver Sickles", "Poke-Dollars"]
+        "currencies" => ["Timezone Tokens", "Beanie Babies", "Imperial Credits", "Silver Sickles", "Poke-Dollars"]
         }
   )
   %>
