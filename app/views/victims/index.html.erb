@@ -3,18 +3,23 @@
 <body class="victims-table">
 <h1>Victims</h1>
 
+    <% child_victims = 0 %>
     <% dead_victims = 0 %>
     <% injured_victims = 0 %>    
     <% @victims.each do |victim| %>
     <% if victim.dead == true %>
-    <% dead_victims += 1 %>
+    <% dead_victims += 1 %>    
+    <% if victim.age < 18 %>
+    <% child_victims += 1 %>
+    <% end %>
     <% else %>
     <% injured_victims += 1 %>
     <% end %>
     <%end%>    
 
+
     <div class="totals">
-      <h3>Total Dead: <%= dead_victims %></h3>
+      <h3><%= "Total Dead: #{dead_victims} (including #{pluralize(child_victims, 'child')})"%></h3>
       <h3>Total Injured: <%= injured_victims %></h3>
     </div>
 <br>
